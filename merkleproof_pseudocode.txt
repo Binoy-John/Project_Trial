@@ -1,0 +1,47 @@
+int first_no=0,second_no=1,l=length; //first number, second number, length
+List PL=[l][] //Proof list
+fc=0,lc=1;
+offset = 1
+For (i=0->C)
+    {
+        fc=0,lc=(offset*2)
+        row=0
+        while(True)
+            {
+                mid=ceil((lc+fc)/2);
+                for(j in range(fc,mid))
+                    {
+                        PL[j].append(second_no)
+                        row++
+                    }
+                if(lc<l)
+                    {
+                        for(k in range(mid,lc+1))
+                        {
+                            PL[k].append(first_no)
+                            row++
+                        }
+                        fc=(lc+1)
+                        lc+=offset
+                        first_no++
+                        second_no++
+                        
+                    }
+                else
+                    {
+                        while(row<l)
+                        {
+                            PL[row].append(second_no+1)
+                            row++
+                        }
+                    }
+                    
+                    }
+            
+                offset *= 2;
+                if(lc>=l)
+                    {
+                        break
+                    }
+        
+    }
